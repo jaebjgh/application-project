@@ -1,0 +1,11 @@
+name: sma
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ipykernel
+  - python-dotenv
+  - pandas
+  - tweepy
+  - autopep8
+  - pymongo
