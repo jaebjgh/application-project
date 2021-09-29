@@ -82,7 +82,7 @@ tesla_timeline = api.user_timeline(screen_name = 'tesla', count = 20, exclude_re
 print(f"Text of last tweet: {tesla_timeline[0].text}")
 print(f"Number of favorites on that tweet : {tesla_timeline[0].favorite_count}")
 print(f"Number of retweets : {tesla_timeline[0].retweet_count}")
-number_replies = client.get_tweet(id = tesla_timeline[0].id, 
+number_replies = tweepy_client.get_tweet(id = tesla_timeline[0].id, 
                  tweet_fields=["public_metrics"]).data.public_metrics['reply_count']
 print(f"Number of replies : {number_replies}")
 
