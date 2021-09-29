@@ -24,7 +24,7 @@ auth.set_access_token(os.getenv("ACCESS_TOKEN"),
                       os.getenv("ACCESS_TOKEN_SECRET"))  # user
 api = tweepy.API(auth)
 
-client = tweepy.Client(bearer_token=os.getenv("BEARER_TOKEN"), 
+tweepy_client = tweepy.Client(bearer_token=os.getenv("BEARER_TOKEN"), 
                        consumer_key=os.getenv("CONSUMER_KEY"), 
                        consumer_secret=os.getenv("CONSUMER_SECRET"),
                        access_token=os.getenv("ACCESS_TOKEN"),
@@ -86,6 +86,57 @@ number_replies = client.get_tweet(id = tesla_timeline[0].id,
                  tweet_fields=["public_metrics"]).data.public_metrics['reply_count']
 print(f"Number of replies : {number_replies}")
 
+################################
+# 300 tweets with #datascience #
+################################
+datascience_tweets =tweepy.Cursor(api.search_tweets, q='#datascience -filter:retweets -filter:replies',
+                    result_type="recent",  # mixed/recent/popular
+                    count = 100, 
+                    tweet_mode='extended').items(1000)
+
+datascience_tweets = [item for item in datascience_tweets]
+print(len(datascience_tweets))
+
+### Save in MongoDB
+client = pymongo.MongoClient('localhost:27017')
+db = client["sma"]
+collection = db['datascience']
+
+for tweet in datascience_tweets:
+    tweet_json = tweet._json
+    tweet_json['_id'] = tweet_json.pop('id')  # change name of tweet id so no duplicate tweet is stored
+    try:
+        collection.insert_one(tweet_json)
+    except pymongo.errors.DuplicateKeyError:
+        continue
+
+# Get Tweets back from MongoDB
+documents = [i for i in collection.find()]
+df = pd.DataFrame(documents)
+
+# Only tweets in german language
+# with filter select value that has to meet criteria
+# with projection select values with list that have to be returned
+collection.find(filter = {'lang': 'de', 'possibly_sensitive' : False}, projection = ['full_text', 'lang'])[0]
+
+################################
+# searching for wandsbek #
+################################
+
+client = pymongo.MongoClient('localhost:27017')
+db = client["sma"]
+collection = db['wandsbek']
+wandsbek_search =tweepy.Paginator(tweepy_client.search_recent_tweets, query='#wandsbek', 
+                             max_results = 10).flatten(limit=10)
+wandsbek_tweets = [item for item in wandsbek_search]
+wandsbek_tweets
+
+print(len(wandsbek_tweets))
+for tweet in wandsbek_tweets:
+    try:
+        collection.insert_one(wandsbek_search)
+    except pymongo.errors.DuplicateKeyError:
+        continue
 
 ############################
 # Processing option #
