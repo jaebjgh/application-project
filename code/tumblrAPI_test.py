@@ -32,12 +32,12 @@ tumb_client.info() # Grabs the current user information
 # read posts with wandsbek#
 # and store inside MongoDB#
 ###########################
-
-tagged_return = tumb_client.tagged('wandsbek')
+collection_tag = 'billstedt'
+tagged_return = tumb_client.tagged(collection_tag)
 tumblr_posts = [item for item in tagged_return]
 client = pymongo.MongoClient('localhost:27017')
 db = client["sma"]
-collection = db['tumblr']
+collection = db[collection_tag]
 
 for post in tumblr_posts:
     id_post = post
@@ -46,3 +46,7 @@ for post in tumblr_posts:
         collection.insert_one(post)
     except pymongo.errors.DuplicateKeyError:
         continue
+
+collection.count_documents({})
+for post in collection.find():
+    print(post)
