@@ -24,8 +24,14 @@ params = {'term': 'coffee',
 response = requests.get(search_api_url, headers=headers, params=params, timeout=5)
 id = response.json()['businesses'][0]['id']
 
-# get reviews of one business
+# get rating of one business
+search_reviews_url = f'https://api.yelp.com/v3/businesses/{id}'
+search_reviews_url
+response = requests.get(search_reviews_url, headers=headers, params = {'locale' : 'de_DE'}, timeout=5)
+response.json()
+
+# get 3 reviews of one business, only 3, yes, it's sad, and not even the newest reviews, and only excerpts
 search_reviews_url = f'https://api.yelp.com/v3/businesses/{id}/reviews'
 search_reviews_url
 response = requests.get(search_reviews_url, headers=headers, params = {'locale' : 'de_DE'}, timeout=5)
-response.json()['reviews'][0]['rating']
+response.json()
