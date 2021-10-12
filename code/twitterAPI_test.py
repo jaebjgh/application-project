@@ -6,7 +6,7 @@ import tweepy
 import os
 import pandas as pd
 import pymongo
-
+import json
 from dotenv import load_dotenv
 
 #######################
@@ -113,6 +113,8 @@ for tweet in datascience_tweets:
 # Get Tweets back from MongoDB
 documents = [i for i in collection.find()]
 df = pd.DataFrame(documents)
+with open('tweet.json', 'w') as outfile:
+    json.dump(documents[0], outfile)
 
 # Only tweets in german language
 # with filter select value that has to meet criteria
@@ -122,17 +124,18 @@ collection.find(filter = {'lang': 'de', 'possibly_sensitive' : False}, projectio
 ################################
 # searching for wandsbek #
 ################################
+import json
 
 client = pymongo.MongoClient('localhost:27017')
-db = client["sma"]
+db = client["ap"]
 collection = db['wandsbek']
 wandsbek_search =tweepy.Paginator(tweepy_client.search_recent_tweets, query='#wandsbek', 
                              max_results = 10).flatten(limit=10)
 wandsbek_tweets = [item for item in wandsbek_search]
-wandsbek_tweets
 
 print(len(wandsbek_tweets))
 for tweet in wandsbek_tweets:
+    
     try:
         collection.insert_one(wandsbek_search)
     except pymongo.errors.DuplicateKeyError:

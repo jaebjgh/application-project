@@ -16,7 +16,7 @@ load_dotenv(envfile)
 # headers contain the api key.
 headers = {'Authorization': 'Bearer {}'.format(os.getenv("API_KEY"))}
 search_api_url = 'https://api.yelp.com/v3/businesses/search'
-params = {'term': 'coffee', 
+params = {'term': 'restaurants', 
           'location': 'Hamburg, Germany',
           'limit': 50}
 
