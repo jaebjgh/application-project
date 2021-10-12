@@ -5,7 +5,7 @@ import json
 from dotenv import load_dotenv
 
 ## Get API key (saved it keys.env file)
-load_dotenv("keys.env")
+load_dotenv(".env")
 api_key = os.getenv("GOOGLE_API_KEY")
 
 ## example PlaceSearch (TextSearch): Restaurants in Altona
