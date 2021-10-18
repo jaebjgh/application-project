@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 # Set up twitter API
-load_dotenv('../../.env')
+load_dotenv('../../.env') # .env file in 'code' dir
 auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"),
                            os.getenv("CONSUMER_SECRET"))  # app
 auth.set_access_token(os.getenv("ACCESS_TOKEN"),
