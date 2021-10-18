@@ -1,4 +1,4 @@
-name: sma
+name: webgefluester
 channels:
   - conda-forge
   - defaults
@@ -9,3 +9,5 @@ dependencies:
   - tweepy
   - autopep8
   - pymongo
+  - geopandas
+  
