@@ -22,8 +22,8 @@ db = client["webgefluester"]
 plz_shape_df = gpd.read_file('../../OSM/Hamburg.geojson')
 names = [district['name'] for district in plz_shape_df.tags]
 
-for district in names:
-    tweets = api.search_tweets(q=district, count=3) # beware of rate limit (450 per 15 minutes) but we should increase the count, because I think only the request is limited not the returned amount
+for district in names[:5]:
+    tweets = api.search_tweets(q=district, count=100, lang = "de") # beware of rate limit (450 per 15 minutes) but we should increase the count, because I think only the request is limited not the returned amount
     collection = db[district] # new mongo collection
     
     for tweet in tweets:        
@@ -33,4 +33,3 @@ for district in names:
             collection.insert_one(tweet._json)
         except pymongo.errors.DuplicateKeyError:
             continue
-
