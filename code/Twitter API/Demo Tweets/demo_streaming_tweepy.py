@@ -16,11 +16,10 @@ stream = tweepy.Stream(os.getenv("CONSUMER_KEY"),
                         os.getenv("ACCESS_TOKEN"),
                         os.getenv("ACCESS_TOKEN_SECRET"))
 stream.filter(track = names, languages = "de")
-output = StreamListener()
 
 tweet = []
 
-
+# inherit from tweepy.Stream class to change the on_data function
 class MyStream(tweepy.Stream):
     tweets = 0
 
