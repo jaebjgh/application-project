@@ -11,35 +11,27 @@ names = [district['name'] for district in plz_shape_df.tags]
 # Set up twitter API
 load_dotenv('../../.env') # .env file in 'code' dir
 
-stream = tweepy.Stream(os.getenv("CONSUMER_KEY"),
-                        os.getenv("CONSUMER_SECRET"),
-                        os.getenv("ACCESS_TOKEN"),
-                        os.getenv("ACCESS_TOKEN_SECRET"))
-stream.filter(track = names, languages = "de")
-
-tweet = []
+# Set up MongoDB
+client = pymongo.MongoClient('localhost:27017')
+db = client["webgefluester"]
+collection = db['streaming_tweets']
 
 # inherit from tweepy.Stream class to change the on_data function
 class MyStream(tweepy.Stream):
-    tweets = 0
 
+    #this function gets called when a tweet meets the search criteria
     def on_data(self, data):
-        print(dir(data))
-        self.tweet_raw = data
+        print((data))
+        tweet = json.loads(data.decode('utf-8'))
+        tweet['_id'] = tweet['id']
+        collection.insert_one(tweet)
+        #self.tweet_raw = data
 
-
-
+#setup stream authentication
 stream = MyStream(os.getenv("CONSUMER_KEY"),
                         os.getenv("CONSUMER_SECRET"),
                         os.getenv("ACCESS_TOKEN"),
                         os.getenv("ACCESS_TOKEN_SECRET"))
 
 # setup the stream, break it to look at the tweet_raw
-stream.filter(track = names)
-print(stream.tweet_raw)
-#convert to dictionary
-a= stream.tweet_raw
-#last step convert to json, dont know how yet
-dict = json.loads(a.decode('utf-8'))
-dict["text"]
-json.dumps(dict, indent = 4)
+stream.filter(track = names, languages = ['de'])
