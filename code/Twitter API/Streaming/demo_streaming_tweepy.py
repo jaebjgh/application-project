@@ -1,9 +1,9 @@
 import os
 import json
-import geopandas as gpd
 import pymongo
 import tweepy
 from dotenv import load_dotenv
+import geopandas as gpd
 
 # Retrieve district names
 plz_shape_df = gpd.read_file('../../OSM/Hamburg.geojson')
@@ -21,10 +21,10 @@ class MyStream(tweepy.Stream):
 
     #this function gets called when a tweet meets the search criteria
     def on_data(self, data):
-        print((data))
         tweet = json.loads(data.decode('utf-8'))
         tweet['_id'] = tweet['id']
         collection.insert_one(tweet)
+        print(tweet["created_at"]+":", tweet["text"], "\n", "-----")
         #self.tweet_raw = data
 
 #setup stream authentication

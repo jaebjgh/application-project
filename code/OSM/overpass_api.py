@@ -1,6 +1,7 @@
 import json
 import requests
 
+import shapely
 import geopandas as gpd
 
 # Retrieve HH district boundaries from Overpass API
@@ -33,7 +34,9 @@ out = {"type": "FeatureCollection",
 
 for feature in response_data:
     feature["type"] = 'Feature'
-    out['features'].append(feature)
+    feature["geometry"]["geometries"] = [geom for geom in feature["geometry"]["geometries"] if geom["type"] == 'LineString']
+    feature["name"] = feature["tags"]["name"]
+    out["features"].append(feature)
 
 # Save geojson file
 with open('Hamburg.geojson', 'w') as geojson:
@@ -42,3 +45,5 @@ with open('Hamburg.geojson', 'w') as geojson:
 # Read in geojson file and plot
 plz_shape_df = gpd.read_file('Hamburg.geojson')
 plz_shape_df.plot() # ugly indeed but Hamburg is recognizable 
+
+
