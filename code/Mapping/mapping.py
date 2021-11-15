@@ -1,4 +1,5 @@
 import folium
+import shapely
 import geopandas as gpd
 from geopandas.geodataframe import GeoDataFrame
 
@@ -9,7 +10,7 @@ class Map:
     def draw(self):
         m = folium.Map(location=[53.551, 9.993], zoom_start=10, tiles="Stamen Toner")
         
-        folium.GeoJson(self.geom, name="geometry", style_function = style_function).add_to(m)
+        folium.GeoJson(self.geom, name="geometry").add_to(m)
         return m
 
     def popup(self, text: str, location: str):
@@ -23,10 +24,26 @@ def style_function(feature):
         "color": "#000000",
     }
 
+def highlight_function(feature):
+    return {
+        "opacity": 0.5,
+        "weight": 0.7,
+        "color": "#FF1493",
+    }
 
-plz_shape_df = gpd.read_file('../OSM/Hamburg.geojson')
+## Data
+osm_Altona_streets = gpd.read_file('../OSM/Altona_streets.geojson')
+streets = gpd.read_file('HH_WFS_Strassen_und_Wegenetz_gesamt', driver='GML')
+altona_streets = streets[streets.gemeindeschluessel.isin(list(range(201,207)))].set_crs('ETRS89', allow_override= True)
+double_streets = {row['properties']['strassenname'] for row in altona_streets.iterfeatures() if len(streets[(streets.strassenname == row['properties']['strassenname']) & ~(streets.gemeindeschluessel.isin(list(range(201,207))))]) > 1}
+parks = gpd.read_file('HH_WFS_Gruenplan', driver='GML')
 
-mp = Map(plz_shape_df)
+"""
+# Collection of LineStrings to Polygons: 
+plz_shape_df["geometry"] = [shapely.geometry.Polygon([coords for geom in row for coords in geom.coords]) for row in plz_shape_df["geometry"]]
+"""
+
+mp = Map(osm_Altona_streets)
 m = mp.draw()
 m
 """
