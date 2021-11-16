@@ -27,7 +27,6 @@ to_track = names + places_names
 # Twitter restricts tracked phrases to 60 bytes
 #altona_street_names = {name for name in altona_streets.strassenname if len(name) < 60}
 #altona_parks = set(parks[(parks.ortsteil.isin(list(range(201,207)))) & (parks.benennung is not None)].benennung)
-#phrases = {"Altona-Altstadt", "Altona Altstadt"}
 
 
 #to_track = altona_street_names.union(altona_parks).union(phrases)
