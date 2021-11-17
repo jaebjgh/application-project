@@ -12,6 +12,5 @@ names = [district['name'] for district in plz_shape_df.tags]
 places = gpd.read_file('../../Mapping/HH_WFS_Gruenflaechen.gml', driver ='GML')
 places_names = [place.lstrip() for name in places.name for place in name.split(',') if len(place) < 60]
 to_track = names + places_names
-with open("names_to_track.txt", "w") as f:
-    for s in to_track:
-        f.write(str(s) +"\n")
+df = pd.DataFrame(to_track)
+df.to_csv('names_to_track.csv')

@@ -32,10 +32,7 @@ import geopandas as gpd
 #to_track = altona_street_names.union(altona_parks).union(phrases)
 # Set up twitter API
 load_dotenv('../../.env') # .env file in 'code' dir
-to_track = []
-with open("names_to_track.txt", "r") as f:
-  for line in f:
-    to_track.append(str(line.strip()))
+to_track = pd.read_csv('names_to_track.csv')['0'].tolist()
 
 # Set up MongoDB
 client = pymongo.MongoClient('localhost:27017')
