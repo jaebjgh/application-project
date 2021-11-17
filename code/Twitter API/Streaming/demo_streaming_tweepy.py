@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 import geopandas as gpd
 
 # Retrieve district names
-plz_shape_df = gpd.read_file('../../OSM/Hamburg.geojson')
-names = [district['name'] for district in plz_shape_df.tags]
-places = gpd.read_file('../../Mapping/HH_WFS_Gruenflaechen.gml', driver ='GML')
-places_names = [place.lstrip() for name in places.name for place in name.split(',') if len(place) < 60]
-to_track = names + places_names
+#plz_shape_df = gpd.read_file('../../OSM/Hamburg.geojson')
+#names = [district['name'] for district in plz_shape_df.tags]
+#places = gpd.read_file('../../Mapping/HH_WFS_Gruenflaechen.gml', driver ='GML')
+#places_names = [place.lstrip() for name in places.name for place in name.split(',') if len(place) < 60]
+#to_track = names + places_names
 
 # excluded Altstadt & Neustadt for demonstrative purposes 
 #osm_Altona_streets = gpd.read_file('../../OSM/Altona_streets.geojson')
@@ -32,6 +32,10 @@ to_track = names + places_names
 #to_track = altona_street_names.union(altona_parks).union(phrases)
 # Set up twitter API
 load_dotenv('../../.env') # .env file in 'code' dir
+to_track = []
+with open("names_to_track.txt", "r") as f:
+  for line in f:
+    to_track.append(str(line.strip()))
 
 # Set up MongoDB
 client = pymongo.MongoClient('localhost:27017')
