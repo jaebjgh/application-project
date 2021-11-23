@@ -15,6 +15,10 @@ to_track = names + places_names
 df = pd.DataFrame(to_track)
 df.to_csv('names_to_track.csv')
 
+#from germansentiment import SentimentModel
+#model = SentimentModel()
+#model.predict_sentiment(["Was für eine Scheiße"])
+
 # other, now not important anymore
 # Retrieve district names
 #plz_shape_df = gpd.read_file('../../OSM/Hamburg.geojson')
