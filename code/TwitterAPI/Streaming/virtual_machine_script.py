@@ -24,8 +24,26 @@ for name in names:
 
 plz_shape_df["geometry"] = make_polygons(plz_shape_df.geometry)
 
+match_dict["Emil-Wendt-Park"] = "Altona-Altstadt"
+match_dict["Baakenpark"] = "HafenCity"
+match_dict["Suttnerpark"] = "Altona-Altstadt"
+match_dict["Außenalster"] = "Rotherbaum"
+match_dict["Hirschpark"] = "Nienstedten"
+match_dict["Große Moorweide"] = "Rotherbaum"
+match_dict["Trauns Park"] = "Rothenburgsort"
+match_dict["Alter Elbpark"] = "Neustadt"
+match_dict["Alter Friedhof Harburg"] = "Harburg"
+match_dict["Alsterpark"] = "Fuhlsbüttel"
+match_dict["Amsinckpark"] = "Lokstedt"
+match_dict["August-Lütgens-Park"] = "Nienstedten"
+match_dict["Hirschpark"] = "Nienstedten"
+
+
+
+
+
 district_of_place1 = ["Altona-Altstadt", "HafenCity", "Altona-Altstadt",
-                    ""]
+                    "Rotherbaum"]
 district_of_place2 = []
 # excluded Altstadt & Neustadt for demonstrative purposes 
 #osm_Altona_streets = gpd.read_file('../../OSM/Altona_streets.geojson')
