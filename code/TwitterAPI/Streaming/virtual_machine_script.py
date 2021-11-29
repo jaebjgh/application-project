@@ -35,8 +35,109 @@ match_dict["Alter Elbpark"] = "Neustadt"
 match_dict["Alter Friedhof Harburg"] = "Harburg"
 match_dict["Alsterpark"] = "Fuhlsbüttel"
 match_dict["Amsinckpark"] = "Lokstedt"
-match_dict["August-Lütgens-Park"] = "Nienstedten"
-match_dict["Hirschpark"] = "Nienstedten"
+match_dict["August-Lütgens-Park"] = "Altona-Altstadt"
+match_dict["BallinPark"] = "Wilhelmsburg"
+match_dict["Baurs Park"] = "Blankenese"
+match_dict["BallinPark"] = "Wilhelmsburg"
+match_dict["Bergedorfer Schlossgarten"] = "Bergedorf"
+match_dict["Berner Gutspark"] = "Farmsen-Berne"
+match_dict["Blohms Park"] = "Horn"
+match_dict["Bolivarpark"] = "Winterhude"
+match_dict["Bonne Park"] = "Bahrenfeld"
+match_dict["Donners Park"] = "Ottensen"
+match_dict["Eichenpark"] = "Harvestehude"
+match_dict["Eichtalpark"] = "Wandsbek"
+match_dict["Elbpark Entenwerder"] = "Rothenburgsort"
+match_dict["Luusbarg"] = "Rissen"
+match_dict["Goßlers  Park"] = "Blankenese"
+match_dict["Grünzug Göhlbachtal"] = "Eißendorf"
+match_dict["Hammer Park"] = "Hamm"
+match_dict["Hayns Park"] = "Eppendorf"
+match_dict["Hennebergpark"] = "Poppenbüttel"
+match_dict["Hessepark"] = "Blankenese"
+match_dict["Altonaer Balkon"] = "Altona-Altstadt"
+match_dict["Innocentiapark"] = "Harvestehude"
+match_dict["Jugendpark Langenhorn"] = "Langenhorn"
+match_dict["Kellinghusen Park"] = "Eppendorf"
+match_dict["Liliencronpark"] = "Rahlstedt"
+match_dict["Drachenthalpark / Parkanlage Neuwiedenthal"] = "Hausbruch"
+match_dict["Lohmühlengrünzug"] = "St. Georg"
+match_dict["Lutherpark"] = "bahrenfeld"
+match_dict["Fischers Park"] = "Ottensen"
+match_dict["Ohlendorffs Park"] = "Volksdorf"
+match_dict["Parkanlage Grindelberg"] = "Harvestehude"
+match_dict["Planten un Blomen"] = "St. Pauli"
+match_dict["Platz der Republik"] = "Altona-Altstadt"
+match_dict["Pulverhofpark"] = "Rahlstedt"
+match_dict["Rathauspark Bergedorf"] = "Bergedorf"
+match_dict["Rathenaupark"] = "Ottensen"
+match_dict["Römischer Garten"] = "Blankenese"
+match_dict["Rüschpark"] = "Finkenwerder"
+match_dict["Schillerufer"] = "Bergedorf"
+match_dict["Schinckels Park"] = "Blankenese"
+match_dict["Schleepark"] = "Altona-Altstadt"
+match_dict["Seelemannpark"] = "Eppendorf"
+match_dict["Sola Bona Park"] = "Eidelstedt"
+match_dict["Glockenhausgarten"] = "Billwerder"
+match_dict["Antonipark"] = "Altona-Altstadt"
+match_dict["Sternschanzenpark"] = "Sternschanze"
+match_dict["Sven Simon Park"] = "Blankenese"
+match_dict["Biedermannplatz"] = "Barmbek-Süd"
+match_dict["Botanischer Sondergarten Wandsbek"] = "Wandsbek"
+match_dict["Eimsbütteler Park"] = "Eimsbüttel"
+match_dict["Eppendorfer Park"] = "Eppendorf"
+match_dict["Hans-Christian-Andersen-Park"] = "Osdorf"
+match_dict["Heinepark"] = "Ottensen"
+match_dict["Jacobipark"] = "Eilbek"
+match_dict["Lise-Meitner-Park"] = "Bahrenfeld"
+match_dict["Loki Schmidt Garten"] = "Klein Flottbek"
+match_dict["Meyers Park Heinrich"] = "Heimfeld"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
