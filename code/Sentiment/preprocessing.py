@@ -39,4 +39,4 @@ nlp.add_pipe("benepar", config={"model": "benepar_de2"})
 
 examp = "Das ist schön, aber das ist doof. Schönes Wetter hier und Kiel ist auch toll. Blabla."
 
-clauses = text2clauses(examp, nlp)
+clauses = text2clauses(examp, nlp) 

@@ -52,7 +52,8 @@ This Bert model is multilingual and detects the proper language automatically.
 
 """
 
-food_encoded = tokenizer.encode("Das Essen ist lecker.")
+food_encoded = tokenizer.encode("Das Essen in Essen ist lecker.")
 town_encoded = tokenizer.encode("Essen ist eine schöne Stadt.")
-
-tokenizer.decode(food_encoded[2]) # 'essen' -> model is uncased
+print(tokenizer.tokenize("Das Essen in Essen ist lecker."))
+print(town_encoded)
+tokenizer.decode(town_encoded[1]) # 'essen' -> model is uncased
