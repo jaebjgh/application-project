@@ -62,7 +62,7 @@ match_dict["Kellinghusen Park"] = "Eppendorf"
 match_dict["Liliencronpark"] = "Rahlstedt"
 match_dict["Drachenthalpark / Parkanlage Neuwiedenthal"] = "Hausbruch"
 match_dict["Lohmühlengrünzug"] = "St. Georg"
-match_dict["Lutherpark"] = "bahrenfeld"
+match_dict["Lutherpark"] = "Bahrenfeld"
 match_dict["Fischers Park"] = "Ottensen"
 match_dict["Ohlendorffs Park"] = "Volksdorf"
 match_dict["Parkanlage Grindelberg"] = "Harvestehude"
@@ -90,7 +90,7 @@ match_dict["Hans-Christian-Andersen-Park"] = "Osdorf"
 match_dict["Heinepark"] = "Ottensen"
 match_dict["Jacobipark"] = "Eilbek"
 match_dict["Lise-Meitner-Park"] = "Bahrenfeld"
-match_dict["Loki Schmidt Garten"] = "Klein Flottbek"
+match_dict["Loki Schmidt Garten"] = "Groß Flottbek"
 match_dict["Meyers Park Heinrich"] = "Heimfeld"
 match_dict["Gorch-Fock-Park"] = "Finkenwerder"
 match_dict["Rosengarten"] = "Harburg"
@@ -106,23 +106,23 @@ match_dict["Große Moorweide "] = "Eimsbüttel"
 match_dict["Wandsbeker Gehölz"] = "Wandsbek"
 match_dict["Wasserpark Dove Elbe"] = "Bergedorf"
 match_dict["Wehbers Park"] = "Eimsbüttel"
-match_dict["Wesselhoeftpark"] = "Altona"
-match_dict["Wohlerspark"] = "Altona"
+match_dict["Wesselhoeftpark"] = "Nienstedten"
+match_dict["Wohlerspark"] = "Altona-Altstadt"
 match_dict["Appelhoffweiher"] = "Steilshoop"
 match_dict["Bornpark"] ="Osdorf"
 match_dict["Böverstpark"] ="Lurup"
 match_dict["Falkensteiner Ufer Elbpark"] = "Blankenese"
 match_dict["Friedhof Lohbrügge"] = "Bergedorf"
-match_dict["Alsenpark"] ="Altona"
+match_dict["Alsenpark"] ="Altona-Nord"
 match_dict["Greifenbergpark"] = "Rahlstedt"
-match_dict["Altonaer Volkspark"] = "Altona"
+match_dict["Altonaer Volkspark"] = "Bahrenfeld"
 match_dict["Grothpark"] = "Othmarschen"
-match_dict["Grünanlage am Sandberg"] = "Altona"
+match_dict["Grünanlage am Sandberg"] = "Altona-Nord"
 match_dict["Grünanlage am Willersweg"] = "Langenhorn"
 match_dict["Grünes Zentrum Lohbrügge"] = "Bergedorf"
 match_dict["Grünzug Langenfort"] = "Barmbek-Nord"
 match_dict["Harburger Schlossinsel"] = "Harburg"
-match_dict["Hauptfriedhof Altona"] = "Altona"
+match_dict["Hauptfriedhof Altona"] = "Bahrenfeld"
 match_dict["Hohenhorstpark"] = "Wandsbek"
 match_dict["Jenfelder Moorpark"] ="Jenfeld"
 match_dict["Johannes Prassek Park"] = "Barmbek-Süd"
@@ -130,7 +130,7 @@ match_dict["Othmarschen Park"] ="Othmarschen"
 match_dict["Parkanlage Langenbeker Feld"] = "Langenbek"
 match_dict["Saseler Park"] ="Wandsbek"
 match_dict["Schwarzenberg"] ="Harburg"
-match_dict["Waldpark Marienhöhe"] = "Altona"
+match_dict["Waldpark Marienhöhe"] = "Blankenese"
 match_dict["Parkanlage am Neuländer See"] = "Harburg"
 match_dict["Hohenbuchenpark"] = "Poppenbüttel"
 match_dict["Öjendorfer Park"] = "Billstedt"
@@ -140,8 +140,8 @@ match_dict["Grasbrookpark"] = "Kleiner Grasbrook"
 match_dict["Gustav-Mahler-Park"] = "Neustadt"
 match_dict["Lohsepark"] = "HafenCity"
 match_dict["Reiherstiegknie"] = "Wilhelmsburg"
-match_dict["Sandtorpark"] = "Mitte"
-match_dict["Bert-Kaempfert Platz"] = "Barmbek"
+match_dict["Sandtorpark"] = "HafenCity"
+match_dict["Bert-Kaempfert Platz"] = "Barmbek-Nord"
 match_dict["Harburger Rathausplatz"] = "Harburg"
 match_dict["Jarreplatz"] ="Winterhude"
 match_dict["Kalischer Platz"] ="Harburg"
@@ -160,54 +160,12 @@ match_dict["Harburger Stadtpark"] = "Harburg"
 match_dict["Stadtpark Winterhude"] = "Winterhude"
 match_dict["Jenischpark"] = "Othmarschen"
 match_dict["Westerpark"] = "Nienstedten"
-match_dict["Kapitän Schröder Park"] = "Altona"
-match_dict["Park Mitte Altona"] = "Altona"
+match_dict["Kapitän Schröder Park"] = "Altona-Altstadt"
+match_dict["Park Mitte Altona"] = "Altona-Nord"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+with open('match_dict.json', 'w') as fp:
+    json.dump(match_dict, fp)
 
 
 district_of_place1 = ["Altona-Altstadt", "HafenCity", "Altona-Altstadt",
