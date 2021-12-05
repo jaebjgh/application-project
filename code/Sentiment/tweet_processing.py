@@ -102,15 +102,9 @@ for text, district in zip(df['clean_text'], df['district']):
     loc_string = ' '.join([str(item) for item in list_loc])
     if re.search(district, loc_string, re.IGNORECASE):
         is_loc.append(True)
-        displacy.render(doc, style="ent")
-    #       
-    #
-    #if district in list_loc:
-    #    is_loc.append(True)
-    #    displacy.render(doc, style="ent")
+        #displacy.render(doc, style="ent")
     else:
         is_loc.append(False)
-df.drop(columns=['district_is_loc'])
 df['district_is_loc'] = is_loc
 list_columns.append('district_is_loc')
 df['district_is_loc'].value_counts()
@@ -146,7 +140,8 @@ for i in np.arange(0, len(df_loc), step_size):
     for prediction in model.predict_sentiment(list(df_loc.iloc[i:i+step_size]['clean_text'])):
         predictions.append(prediction)
     print(i)
-df_loc['sentiment'] = predictions
+df_loc['sentiment'] = [sentiment[0] for sentiment in predictions]
+df_loc['sentiment_score'] = [sentiment[1] for sentiment in predictions]
 df_loc.to_csv('df_sent.csv')
 #########################################
 # set "created at" as datetime          #
