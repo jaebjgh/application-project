@@ -29,7 +29,8 @@ class MySentimentModel():
             return text.replace("0"," null").replace("1"," eins").replace("2"," zwei").replace("3"," drei").replace("4"," vier").replace("5"," fünf").replace("6"," sechs").replace("7"," sieben").replace("8"," acht").replace("9"," neun")         
 
     def clean_text(self,text: str)-> str:    
-            text = text.replace("\n", " ")        
+            text = text.replace("\n", " ")    
+            text = re.sub(r'http[\S]+', 'URL', text)    
             text = self.clean_http_urls.sub('',text)
             text = self.clean_at_mentions.sub('',text)        
             text = self.replace_numbers(text)                
