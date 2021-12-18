@@ -4,7 +4,6 @@ import pymongo
 import pandas as pd 
 import tweepy
 from dotenv import load_dotenv
-import geopandas as gpd
 
 #to_track = altona_street_names.union(altona_parks).union(phrases)
 # Set up twitter API

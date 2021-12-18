@@ -13,6 +13,7 @@ from matplotlib.pyplot import figure
 pd.set_option('display.max_colwidth', None)
 model = MySentimentModel(model_name = "oliverguhr/german-sentiment-bert")
 
+
 #########################################
 # load collected tweets                 #
 #########################################
@@ -81,7 +82,7 @@ df[list_columns].sample(5)
 #########################################
 
 df['clean_text'] = df['full_text'].apply(model.clean_text)
-
+df[['clean_text', 'full_text']].sample(3)
 
 #########################################
 # column with matching district         #
