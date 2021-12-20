@@ -63,7 +63,7 @@ class Map:
             fill_color = colors[props["sentiment"]]
 
             timestamp = props["created_at"]
-            text = props["clean_text"]
+            text = props["full_text"]
 
             folium.Marker(location=(props["geometry"].y, props["geometry"].x),
                         icon=folium.Icon(
