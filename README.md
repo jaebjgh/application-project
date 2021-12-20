@@ -1,2 +1,10 @@
-# application-project
-In this repository we will work on an analysis of the tonality on different social media platforms
+# Bewertung von Stadtquartieren über Soziale Medien
+
+Dokumentation in Jupyter Notebooks:
+- Streaming: tweets_hh/TwitterAPI/demo_streaming_tweepy.ipynb
+- Stimmungsanalyse mit BERT: tweets_hh/Sentiment/tweet_processing.ipynb 
+- Visualisierung: Viz_Demo.ipynb 
+
+Julian Berger @jaebjgh
+
+Christina Hübers @christinaverenahue
