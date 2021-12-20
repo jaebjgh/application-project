@@ -1,0 +1,7 @@
+import facebook as fb
+
+access_token = "EAADEjavsjpIBAItRZAwrcUFjgdC9VehTyJqZBn01hczWyk1Pl9ZCmytDI3c824fVpXFVTJZANtFDuTFZAqiihxXa38afJbjHggSHxZCGokeeEdZBiUszHK4ZA52OrLwReDzP6LCZCIHxMUskEs1KzryPwBMh3ZC9lZBPmizD7zkRJIIpR1fXhevCoBGpLsAwZAOx9J1BZCksbiMB50Xh8ierJyDusJAfhEFjAjekBQF1FJ1Yk7QzJ2BwlGvTWVZCQgRYTs7x4ZD"
+
+access = fb.GraphAPI(access_token)
+
+post = access.get_object(id='391251941750994', fields='feed')
