@@ -5,5 +5,5 @@ Dokumentation in Jupyter Notebooks:
 - Stimmungsanalyse mit BERT: tweets_hh/Sentiment/tweet_processing.ipynb 
 - Visualisierung: Viz_Demo.ipynb 
 
-Julian Berger @jaebjgh
+Julian Berger @jaebjgh\n
 Christina Hübers @christinaverenahue
