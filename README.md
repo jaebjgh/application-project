@@ -3,7 +3,7 @@
 ## Projektzusammenfassung
 
 **Motivation** \
-Die Investitionsbank Schleswig-Holstein (IB.SH) unterstützt vielältige öffentliche und private Investitionsvorhaben in Schleswig-Holstein, insbesondere auch (sozialen) Wohnungsbau. Die IB.SH hat uns im Rahmen des Anwendungsprojekts im DataScience Master der FH Kiel beauftragt zu untersuchen, ob die Attraktivität von Wohnquartieren anhand von *Webgeflüster* in sozialen Medien beurteilt und ferner die Akzeptanz konkreter Förderungsmaßnahmen analysiert werden kann. 
+Die Investitionsbank Schleswig-Holstein (IB.SH) unterstützt vielältige öffentliche und private Investitionsvorhaben in Schleswig-Holstein, insbesondere auch (sozialen) Wohnungsbau. Die IB.SH hat uns im Rahmen des Anwendungsprojekts im Data Science Master der FH Kiel beauftragt zu untersuchen, ob die Attraktivität von Wohnquartieren anhand von *Webgeflüster* in sozialen Medien beurteilt und ferner die Akzeptanz konkreter Förderungsmaßnahmen analysiert werden kann. 
 
 **Ansatz** \
 Zu Beginn haben wir uns mit verschiedenen sozialen Medienplattformen und ihren APIs beschäftigt. Einige APIs waren stark eingeschränkt oder gar nicht öffentlich verfügbar, z.B. müssen selbst öffentliche Facebook-Seiten oder -gruppen einem Zugriff auf ihre Inhalte zunächst zustimmen, während AirBnB seine API nur Businesspartnern zur Verfügung stellt, die zuvor einen Bewerbungsprozess durchlaufen haben. Andere Plattformen haben sich als unbrauchbar herausgestellt, da ihre Inhalte hauptsächlich visueller Natur sind (Pinterest, Instagram) oder für unsere Zwecke relevante Posts nur sehr selten abgesetzt werden (Tumblr). 
