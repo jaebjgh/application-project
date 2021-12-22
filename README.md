@@ -24,7 +24,7 @@ Für ländliche Landstriche mag dieses Vorgehen gar nicht praktikabel sein, da e
 Dokumentation der Arbeitsschritte in Jupyter Notebooks:
 - [Streaming](https://github.com/jaebjgh/application-project/blob/main/tweets_hh/TwitterAPI/Streaming/demo_streaming_tweepy.ipynb)
 - [Filtern von Tweets und Stimmungsanalyse mit BERT](https://github.com/jaebjgh/application-project/blob/main/tweets_hh/Sentiment/tweet_processing.ipynb) 
-- [Interaktive Karte von HH mit Tweets](https://nbviewer.org/github/jaebjgh/application-project/blob/main/Viz_Demo.ipynb)
+- [Interaktive Karte von HH mit Tweets](https://nbviewer.org/github/jaebjgh/application-project/blob/18af7fc0286f44145a1fd6c23f00c0b6e9048ad6/viz_hh_demo.ipynb)
 
 Info: [nbviewer](https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686) ist ein Tool des Projekt Jupyter, um CSS / Javascript Elemente von Jupyter Notebooks im Webbrowser anzeigen zu können. Das betroffene Notebook liegt im selben Verzeichnis wie diese `README.md` und enthält die interaktive Karte von HH, die ansonsten nicht angezeigt werden könnte.
 
